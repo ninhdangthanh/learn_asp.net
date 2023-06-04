@@ -1,0 +1,103 @@
+﻿@model List<Laptop>
+
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+
+<div class="body_title container">
+    <div class="body_nav">
+        <a href="/Main" class="nav_home">
+            Trang chủ
+        </a>
+        /
+        <span>Laptop Acer</span>
+    </div>
+
+    <div class="body_banner">
+        <div>
+            <img src="https://laptop-react-web.web.app/static/media/bannerL.e6450bdf.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://laptop-react-web.web.app/static/media/bannerR.cc2029f7.jpg" alt="">
+        </div>
+    </div>
+
+    <h2 class="body_laptop_title">Laptop Acer</h2>
+
+    <div class="body_laptop_type">
+        @foreach (String series in ViewBag.FieldValues)
+        {
+            @if (series == @ViewBag.Series)
+            {
+                <a href="/Main/LaptopAcer?series=@series" id=""
+                   class="body_laptop_type_item series_active">@series</a>
+            }
+            else
+            {
+                <a href="/Main/LaptopAcer?series=@series" id=""
+                   class="body_laptop_type_item">@series</a>
+            }
+
+        }
+
+    </div>
+</div>
+
+<div class="body_laptop_products container">
+    @foreach (Laptop laptop in Model)
+    {
+        <a href="/Main/Details/@laptop.LaptopId" class="body_products_item_right_item">
+            <img src="@laptop.link_img" alt="">
+            <div class="body_products_item_right_item_name">
+                @laptop.name
+            </div>
+            <div class="body_products_item_right_item_price">
+                <div class="body_products_item_right_item_price_left">
+                    @laptop.price
+                </div>
+                <div class="body_products_item_right_item_price_right">
+                    @laptop.past_price
+                </div>
+            </div>
+            <div class="body_products_item_right_item_rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <div>10 đánh giá</div>
+            </div>
+            <div class="body_products_item_right_item_specification">
+                <div class="body_products_item_right_item_specification_detail">
+                    <i class="fa-solid fa-laptop"></i>
+                    @laptop.screen_compact
+                </div>
+                <div class="body_products_item_right_item_specification_detail">
+                    <i class="fa-solid fa-microchip"></i>
+                    @laptop.cpu_compact
+                </div>
+                <div class="body_products_item_right_item_specification_detail">
+                    <i class="fa-solid fa-sim-card"></i>
+                    @laptop.ram_compact
+                </div>
+                <div class="body_products_item_right_item_specification_detail">
+                    <i class="fa-solid fa-database"></i>
+                    @laptop.memory_compact
+                </div>
+                <div class="body_products_item_right_item_specification_detail">
+                    <i class="fa-solid fa-flag-usa"></i>
+                    NVIDIA
+                </div>
+            </div>
+        </a>
+    }
+</div>

@@ -1,0 +1,8 @@
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.csproj.AssemblyReference.cache
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.AssemblyInfoInputs.cache
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.AssemblyInfo.cs
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.csproj.CoreCompileInputs.cache
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.MvcApplicationPartsAssemblyInfo.cache
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.RazorAssemblyInfo.cache
+D:\ASP.NET\LaptopTieuLuan\LaptopTieuLuan\obj\Debug\net7.0\LaptopTieuLuan.RazorAssemblyInfo.cs

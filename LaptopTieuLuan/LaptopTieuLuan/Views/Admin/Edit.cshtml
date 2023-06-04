@@ -1,0 +1,138 @@
+﻿@model LaptopWeb.Models.Laptop
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="https://laptop-react-web.web.app/static/media/logo_tran_phat.d761b569.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+
+
+<div class="right_list_form">
+    <form asp-action="Edit" method="post">
+        <input asp-for="LaptopId" required="" type="number" placeholder="" hidden class="form-control"
+               name="LaptopId" id="LaptopId">
+        <div class="mb-3">
+            <label class="form-label"><strong>Thương hiệu</strong></label>
+            <select asp-for="TrademarkId" name="TrademarkId" id="TrademarkId" class="form-select">
+                <option selected value="1">Dell</option>
+                <option value="2">Acer</option>
+                <option value="3">Asus</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Series</strong></label>
+            <select asp-for="series" name="series" id="series" class="form-select">
+                <option selected value="Latitude">Latitude</option>
+                <option value="Inspiron">Inspiron</option>
+                <option value="Vostro">Vostro</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Tên máy</strong></label>
+            <input asp-for="name" required="" type="text" placeholder="Nhập tên máy (text)" class="form-control"
+                   name="name" id="name">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Giá</strong></label>
+            <input asp-for="price" required="" type="number" placeholder="Nhập Giá (number)" class="form-control"
+                   name="price" id="price">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Giá cũ</strong></label>
+            <input asp-for="past_price" required="" type="number" placeholder="Nhập Giá cũ (number)" class="form-control"
+                   name="past_price" id="past_price">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>CPU</strong></label>
+            <select asp-for="cpu_compact" name="cpu_compact" id="cpu_compact" class="form-select">
+                <option selected value="Core i3">Core i3</option>
+                <option value="Core i5">Core i5</option>
+                <option value="Core i7">Core i7</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Ram</strong></label>
+            <select asp-for="ram_compact" name="ram_compact" id="ram_compact" class="form-select">
+                <option selected value="4GB">4GB</option>
+                <option value="8GB">8GB</option>
+                <option value="16GB">16GB</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Memory</strong></label>
+            <select asp-for="memory_compact" name="memory_compact" id="memory_compact" class="form-select">
+                <option selected value="256GB">256 GB</option>
+                <option value="512GB">512 GB</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Screen</strong></label>
+            <select asp-for="screen_compact" name="screen_compact" id="screen_compact" class="form-select">
+                <option selected value="14inch">14 Inch</option>
+                <option value="15.6inch">15.6 Inch</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Link Image</strong></label>
+            <input asp-for="link_img" required="" type="text" placeholder="Nhập Link image (text)" class="form-control"
+                   name="link_img" id="link_img">
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-form-login-submit">Thêm</button>
+    </form>
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+<script>
+
+    function StartFunc() {
+        var selectedValue = document.getElementById("TrademarkId").value;
+        if (selectedValue == "Dell") {
+            document.getElementById("series").innerHTML = "<option selected value='Latitude'>Latitude</option><option value='Inspiron'>Inspiron</option><option value='Vostro'>Vostro</option>"
+        } else if (selectedValue == "Acer") {
+            document.getElementById("series").innerHTML = "<option selected value='Aspire'>Aspire</option><option value='Nitro'>Nitro</option><option value='Swift'>Swift</option>"
+        } else {
+            document.getElementById("series").innerHTML = "<option selected value='Zenbook'>Zenbook</option><option value='VivoBook'>VivoBook</option><option value='ROG'>ROG</option>"
+        }
+    }
+
+    document.getElementById('TrademarkId').onchange = function () {
+        StartFunc()
+    }
+
+
+    // edit
+    document.getElementById("cpu_compact").value = "@Model.cpu_compact";
+    document.getElementById("ram_compact").value = "@Model.ram_compact";
+    document.getElementById("memory_compact").value = "@Model.memory_compact";
+    document.getElementById("screen_compact").value = "@Model.screen_compact";
+
+    document.getElementById("TrademarkId").value = "@Model.Trademark.TrademarkId";
+    document.getElementById("series").value = "@Model.series";
+
+    document.getElementById("name").value = "@Model.name";
+    document.getElementById("price").value = "@Model.price";
+    document.getElementById("past_price").value = "@Model.past_price";
+    document.getElementById("link_img").value = "@Model.link_img";
+    document.getElementById("LaptopId").value = "@Model.LaptopId";
+
+</script>
+
+

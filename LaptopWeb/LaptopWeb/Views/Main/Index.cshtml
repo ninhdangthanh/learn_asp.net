@@ -1,0 +1,364 @@
+﻿@using LaptopWeb.Models.ViewModel;
+@model HomePageModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://laptop-react-web.web.app/static/media/logo_tran_phat.d761b569.png">
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+</head>
+
+<body>
+   
+    <div class="body container">
+        <div class="slide_container">
+            <div class="carousel-item-left">
+                <img src="https://laptop-react-web.web.app/static/media/bannerL5.f740da53.jpg"
+                     class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item-right">
+                <img src="https://laptop-react-web.web.app/static/media/bannerR1.3569a80a.jpg" alt="">
+                <img src="https://laptop-react-web.web.app/static/media/bannerR2.9fd22025.jpg" alt="">
+                <img src="https://laptop-react-web.web.app/static/media/bannerR3.6209d530.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="body_products container">
+        <div class="body_products_item">
+            <div class="body_products_item_left">
+                <h2>LAPTOP DELL</h2>
+                <img src="https://laptop-react-web.web.app/static/media/dell.d97e6b8f.jpg" alt="">
+            </div>
+            <div class="body_products_item_right">
+                <a href="laptop_trademark?trademark=Dell&series=noSeries" class="body_products_see_all">
+                    Xem tất cả
+                </a>
+                <div class="body_products_item_right_list_product">
+                    @foreach (Laptop laptop in Model.listLaptopDell)
+                    {
+                        <a href="Main/Details/@laptop.LaptopId" class="body_products_item_right_item">
+                            <img src="@laptop.link_img" alt="">
+                            <div class="body_products_item_right_item_name">
+                                @laptop.name
+                            </div>
+                            <div class="body_products_item_right_item_price">
+                                <div class="body_products_item_right_item_price_left">
+                                    @laptop.price
+                                </div>
+                                <div class="body_products_item_right_item_price_right">
+                                    @laptop.past_price
+                                </div>
+                            </div>
+                            <div class="body_products_item_right_item_rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div>10 đánh giá</div>
+                            </div>
+                            <div class="body_products_item_right_item_specification">
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-laptop"></i>
+                                    @laptop.screen_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    @laptop.cpu_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-sim-card"></i>
+                                    @laptop.ram_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-database"></i>
+                                    @laptop.memory_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-flag-usa"></i>
+                                    NVIDIA
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="body_products_item">
+            <div class="body_products_item_left">
+                <h2>LAPTOP ACER</h2>
+                <img src="https://laptop-react-web.web.app/static/media/dell.d97e6b8f.jpg" alt="">
+            </div>
+            <div class="body_products_item_right">
+                <a href="laptop_trademark?trademark=Acer&series=noSeries" class="body_products_see_all">
+                    Xem tất cả
+                </a>
+                <div class="body_products_item_right_list_product">
+                    @foreach (Laptop laptop in Model.listLaptopAcer)
+                    {
+                        <a href="Main/Details/@laptop.LaptopId" class="body_products_item_right_item">
+                            <img src="@laptop.link_img" alt="">
+                            <div class="body_products_item_right_item_name">
+                                @laptop.name
+                            </div>
+                            <div class="body_products_item_right_item_price">
+                                <div class="body_products_item_right_item_price_left">
+                                    @laptop.price
+                                </div>
+                                <div class="body_products_item_right_item_price_right">
+                                    @laptop.past_price
+                                </div>
+                            </div>
+                            <div class="body_products_item_right_item_rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div>10 đánh giá</div>
+                            </div>
+                            <div class="body_products_item_right_item_specification">
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-laptop"></i>
+                                    @laptop.screen_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    @laptop.cpu_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-sim-card"></i>
+                                    @laptop.ram_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-database"></i>
+                                    @laptop.memory_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-flag-usa"></i>
+                                    NVIDIA
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="body_products_item">
+            <div class="body_products_item_left">
+                <h2>LAPTOP ASUS</h2>
+                <img src="https://laptop-react-web.web.app/static/media/dell.d97e6b8f.jpg" alt="">
+            </div>
+            <div class="body_products_item_right">
+                <a href="laptop_trademark?trademark=Asus&series=noSeries" class="body_products_see_all">
+                    Xem tất cả
+                </a>
+                <div class="body_products_item_right_list_product">
+                    @foreach (Laptop laptop in Model.listLaptopAsus)
+                    {
+                        <a href="Main/Details/@laptop.LaptopId" class="body_products_item_right_item">
+                            <img src="@laptop.link_img" alt="">
+                            <div class="body_products_item_right_item_name">
+                                @laptop.name
+                            </div>
+                            <div class="body_products_item_right_item_price">
+                                <div class="body_products_item_right_item_price_left">
+                                    @laptop.price
+                                </div>
+                                <div class="body_products_item_right_item_price_right">
+                                    @laptop.past_price
+                                </div>
+                            </div>
+                            <div class="body_products_item_right_item_rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div>10 đánh giá</div>
+                            </div>
+                            <div class="body_products_item_right_item_specification">
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-laptop"></i>
+                                    @laptop.screen_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    @laptop.cpu_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-sim-card"></i>
+                                    @laptop.ram_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-database"></i>
+                                    @laptop.memory_compact
+                                </div>
+                                <div class="body_products_item_right_item_specification_detail">
+                                    <i class="fa-solid fa-flag-usa"></i>
+                                    NVIDIA
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body_news container">
+        <div class="body_news_bar">
+            <div class="body_news_bar_laptop">
+                VIDEO VỀ LAPTOP
+            </div>
+            <div class="body_news_bar_news_title">
+                TIN TỨC
+            </div>
+        </div>
+        <div class="body_news_bottom">
+            <div class="body_news_video">
+                <iframe width="654" height="400" src="https://www.youtube.com/embed/-7Q3sCTJxOU"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="body_news_list_news">
+                <div class="body_news_list_news_wrap">
+                    <div class="body_news_list_news_item">
+                        <div class="body_news_list_news_item_img">
+                            <img class="body_news_list_news_item_img_img"
+                                 src="https://laptop-react-web.web.app/static/media/imgFB1.eb42532b.jpg"
+                                 alt="">
+                        </div>
+                        <div class="body_news_list_news_item_content">
+                            <div class="body_news_list_news_item_content_title">
+                                Top 10 Thương Hiệu Laptop Xách Tay tốt nhất Thế Giới 2021
+                            </div>
+                            <div class="body_news_list_news_item_content_day">
+                                20/9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_news_list_news_item">
+                        <div class="body_news_list_news_item_img">
+                            <img class="body_news_list_news_item_img_img"
+                                 src="https://laptop-react-web.web.app/static/media/imgFB2.b86acddf.jpg"
+                                 alt="">
+                        </div>
+                        <div class="body_news_list_news_item_content">
+                            <div class="body_news_list_news_item_content_title">
+                                Top 10 Laptop Workstation đáng mua nhất hiện nay
+                            </div>
+                            <div class="body_news_list_news_item_content_day">
+                                20/9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_news_list_news_item">
+                        <div class="body_news_list_news_item_img">
+                            <img class="body_news_list_news_item_img_img"
+                                 src="https://laptop-react-web.web.app/static/media/imageFB3.51855277.png"
+                                 alt="">
+                        </div>
+                        <div class="body_news_list_news_item_content">
+                            <div class="body_news_list_news_item_content_title">
+                                Trải nghiệm giao diện mới của "hệ điều hành của tương lai" Window
+                                11
+                            </div>
+                            <div class="body_news_list_news_item_content_day">
+                                20/9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_news_list_news_item">
+                        <div class="body_news_list_news_item_img">
+                            <img class="body_news_list_news_item_img_img"
+                                 src="https://laptop-react-web.web.app/static/media/imgFB4.5c9aca4a.jpg"
+                                 alt="">
+                        </div>
+                        <div class="body_news_list_news_item_content">
+                            <div class="body_news_list_news_item_content_title">
+                                Top 10 laptop pin "trâu" không thể bỏ qua
+                            </div>
+                            <div class="body_news_list_news_item_content_day">
+                                20/9
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="evaluate container">
+        <h2>Trải nghiệm người dùng</h2>
+        <div class="evaluate_body">
+            <div class="evaluate_item">
+                <img src="https://laptop-react-web.web.app/static/media/user1.34f1a584.jpg" alt=""
+                     class="evaluate_item_img">
+                <div class="evaluate_item_name">MAI NGUYỄN</div>
+                <div class="evaluate_item_company">IT tại FPT Software</div>
+                <div class="evaluate_item_content">
+                    Mình là dân IT. Mình đã mua máy bên chỗ anh Tuấn Trần Phát từ 2017 tới giờ. Chủ yếu là
+                    mình mua máy
+                    Dell Hiện tại mình vẫn đang lấy hàng thường xuyên chỗ anh này cho công ty dùng. Vì mình
+                    thấy cấu
+                    hình này so với máy mới thì rẻ hơn nhiều. Chúc anh thành công hơn nữa !
+                </div>
+            </div>
+            <div class="evaluate_item">
+                <img src="https://laptop-react-web.web.app/static/media/user2.0990586a.jpg" alt=""
+                     class="evaluate_item_img">
+                <div class="evaluate_item_name">lương đặng chi</div>
+                <div class="evaluate_item_company">Sinh viên Đại Học Bách Khoa TPHCM</div>
+                <div class="evaluate_item_content">
+                    Lời khuyên cho các bác mua máy tính cấu hình tốt kèm theo giá hợp túi tiền sinh viên.
+                    Giá không cần
+                    phải bàn rồi. Còn về chất lượng thì khỏi phải chê, có vấn đề gì thì cứ mang máy tới ảnh
+                    bảo hành từ
+                    A tới Á luôn. Mua của ảnh an tâm lắm, cho nên mình giới thiệu cho bạn bè cùng mua thì
+                    chúng nó có
+                    có cảm nhận giống mình. Cho 5* bự.
+                </div>
+            </div>
+            <div class="evaluate_item">
+                <img src="https://laptop-react-web.web.app/static/media/user3.ad564800.jpg" alt=""
+                     class="evaluate_item_img">
+                <div class="evaluate_item_name">trinh nguyễn</div>
+                <div class="evaluate_item_company">Account Manager tại Sapo</div>
+                <div class="evaluate_item_content">
+                    Vì mình cần gấp 1 em laptop nhỏ gọn nhưng chạy đồ họa tốt nên nhờ a chủ tư vấn giúp ngay
+                    nửa đêm,
+                    ảnh vẫn rất nhiệt tình :) và máy thì mới quá mới, quá mượt mà ToT bạn nào thực sự muốn
+                    mua laptop
+                    thì cứ yên tâm với chất lượng hàng hóa shop nhé (y) (y)
+                </div>
+            </div>
+            <div class="evaluate_item">
+                <img src="data:image/jpeg;base64,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" alt=""
+                     class="evaluate_item_img">
+                <div class="evaluate_item_name">đào trần</div>
+                <div class="evaluate_item_company">Designer tại Điền Quân Media</div>
+                <div class="evaluate_item_content">
+                    Sau một thời gian mua và sử dụng con Thinkpad T460s tại Trần Phát. Cảm ơn anh Tuấn Trần
+                    Phát dễ
+                    thương, tâm lý đã tư vấn và giúp mình chọn được em laptop hơn cả sự mong đợi với chi phí
+                    hợp lý. Tin
+                    mình đi, các bạn không chọn sai đâu.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+

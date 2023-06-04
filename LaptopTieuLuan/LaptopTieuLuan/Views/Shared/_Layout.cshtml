@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LaptopWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://laptop-react-web.web.app/static/media/logo_tran_phat.d761b569.png">
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="header">
+        <div class="top_header container">
+            <div class="logo_header w-25">
+                <a href="/Main">
+                    <img src="https://laptop-react-web.web.app/static/media/logo_tran_phat.d761b569.png"
+                         alt="">
+                </a>
+            </div>
+            <div class="search_header w-25">
+                <form action="@Url.Action("Search", "Main")" method="post"
+                      class="search_header_wrap">
+                    <input class="search_header_input" id="searchValue" name="searchValue" type="text"
+                           placeholder="Nhập tên sản phẩm">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass search_header_icon"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="advertisement_header w-25">
+                <div class="advertisement_header_wrap">
+                    <div class="ad_day_day">
+                        <div class="number">
+                            07
+                        </div>
+                        <div class="letter">
+                            NGÀY
+                        </div>
+                    </div>
+                    <div class="ad_day_text">
+                        DÙNG THỬ MIỄN PHÍ
+                    </div>
+                    <div class="ad_day_day">
+                        <div class="number">
+                            30
+                        </div>
+                        <div class="letter">
+                            NGÀY
+                        </div>
+                    </div>
+                    <div class="ad_day_text">
+                        ĐỔI TRẢ HƯ HỎNG
+                    </div>
+                </div>
+            </div>
+            <div class="cart_admin_header w-25">
+                <div class="cart_am_hd_wrap">
+                    <div class="cart_admin_header_div">
+                        <div class="cart_header_icon">
+                            <i class="fa-solid fa-cart-shopping cart_admin_header_div_faw"></i>
+                        </div>
+                        <div class="">Giỏ hàng</div>
+                    </div>
+                    <a href="/Admin/Index" class="cart_admin_header_div">
+                        <div class="cart_header_icon">
+                            <i class="fa-solid fa-circle-user cart_admin_header_div_faw"></i>
+                        </div>
+                        <div class="">Tài khoản</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bot_header">
+            <div class="bot_header_item">
+                <a href="/Main" class=" bot_header_item_link">Trang chủ</a>
+            </div>
+            <div class="bot_header_item">
+                <a href="/Main/All" class="bot_header_item_link">Tất cả sản phẩm</a>
+            </div>
+            <div class="bot_header_item">
+                <a href="/Main/LaptopDell"
+                   class="bot_header_item_link">
+                    Laptop
+                    Dell
+                </a>
+            </div>
+            <div class="bot_header_item">
+                <a href="/Main/LaptopAcer"
+                   class="bot_header_item_link">
+                    Laptop
+                    Acer
+                </a>
+            </div>
+            <div class="bot_header_item">
+                <a href="/Main/LaptopAsus"
+                   class="bot_header_item_link">
+                    Laptop
+                    Asus
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer">
+        <div class="footer_info container">
+            <div class="footer_info_column">
+                <div class="footer_info_logo_web">
+                    <a href="/Main">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAABkCAMAAABqx9+wAAAAq1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Nr6iZAAAAOHRSTlMABPsHC/iCLCYV5YbTvj2j3knisKwiEMUxtaj0Q9kdGe1bi06QXzV0V5XpOZ59ZPGZznhqUrnJb0+y2lcAABGJSURBVHja7Jp9f5owEMcv8iRaRYagIGpBrFjFqtWa9//Kdjke4gbuM9d/NrtfW5pcYuS+3F3SB/gdMQYobxxla8vxfd9xHP/sO8G++x7O8xnw9URU1DCzHEvfhYbHSrvqbtLjfhgk0ewLshHueune376P1dKkCLEShJvGTrBqfy00wtX+2l/bBEWpe67ktvHRCZbql0Ej3Fw6QaoKAmQxx4vdsdvd75OufonCNvFidH1Jzt3Zl0AjXLyc10ZBRd1c1sPhNs526QJ1ii76Ohha3agNYhRnezj7C6BhAFEvmeUJZEZ7xzrargJSxUbVDZxuyHC+GNv14gdPKIa54VsugEiTxdaPbbMYMI1NuDid7P7YVYHU3m397hhoLluNdo9MRgGIeyG5ah79fVF7jSj2p2+8lNb5sFb5OWb+PhymOU9z67sPS4bBZpTlWLq9bEZl97R+IhyTb4eeMxyeR9Nn6r+djy+A6m97S0ZI7Y8LPKQYwHE0Fj6ybLRShcW2BIWOoy/G8yoaVLe/2x9aOHA4igo8ToqDnmINVXg8IY/hlsIlHenCQfMiYmWUbVR5GJa5Mku3Hc5bw/Aa7O78eGQUmH28i29mMHSx72WvnE91o0ZEdtVFgHFzttFQojEfDowCL08hXiH9iAD13sFgSRWiAI0iu9tFfP4Yew/6M6UC9sEVabT2TVGDPxCLXaPSxMbLcL9K1AdkknNZHEzk4vV0QMWcD6LfCQCaMl/jdPsRw4XixUMuxuGE7faBQuB3HWVAARY/IBkFNhQv4ZOB7XTCB+EdXtLULuc989HIMHCfRH2xD3Pk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" alt="footer">
+                    </a>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        103/16 Nguyễn Hồng Đào, P.14, Q.Tân Bình, Tp.HCM
+                    </span>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        169 Võ Văn Ngân, Phường Linh Chiểu, TP.Thủ Đức
+                    </span>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>
+                        035.9814.518
+                    </span>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-envelope-open"></i>
+                    <span>
+                        ninhnam027@gmail.com
+                    </span>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-envelope-open"></i>
+                    <span>
+                        nd272002@gmail.com
+                    </span>
+                </div>
+                <div class="footer_info_address">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>
+                        https://laptops.vn
+                    </span>
+                </div>
+                <div class="footer_info_thue">
+                    CÔNG TY TNHH MTV TIN HỌC TRẦN PHÁT
+                </div>
+                <div class="footer_info_thue_detail">
+                    <div>Mã số thuế: 0313886932</div>
+                    <div>Người đại diện: Trần Minh Tuấn</div>
+                    <div>Ngày cấp: 29/06/2016</div>
+                    <div>Nơi cấp: Chi cục Thuế Quận Tân Bình</div>
+                </div>
+            </div>
+            <div class="footer_info_column">
+                <div class="footer_info_customer">
+                    <div class="footer_info_customer_title">
+                        CHÍNH SÁCH CHUNG
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Chính sách vận chuyển </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Chính sách đổi trả </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Chính sách bảo mật </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Chính sách bảo hành </span>
+                    </div>
+                </div>
+                <div class="footer_info_customer">
+                    <div class="footer_info_customer_title">
+                        TƯ VẤN KHÁCH HÀNG
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Tư vấn mua hàng </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Hỗ trợ kỹ thuật </span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_info_column">
+                <div class="footer_info_customer">
+                    <div class="footer_info_customer_title">
+                        THÔNG TIN HỖ TRỢ
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span>Giới thiệu</span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Hướng dẫn mua hàng online </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Hướng dẫn thanh toán </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span> Mua hàng trả góp </span>
+                    </div>
+                    <div class="footer_info_customer_item">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span>Tuyển dụng</span>
+                    </div>
+                </div>
+                <div class="footer_info_thue_info">
+                </div>
+            </div>
+        </div>
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

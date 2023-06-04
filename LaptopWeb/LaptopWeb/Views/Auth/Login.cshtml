@@ -1,0 +1,24 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="login_page_title_container">Đăng nhập để đến trang quản lý Web Laptop</h3>
+<div class="body_login container_login_form">
+    <form asp-action="Login" method="post">
+        <div class="mb-3">
+            <label for="exampleInputUsername" class="form-label"><strong>Email</strong></label>
+            <input asp-for="Email" placeholder=" Nhập username" type="text" name="Email" class="form-control"
+                   id="exampleInputUsername">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword" class="form-label"><strong>Password</strong></label>
+            <input asp-for="Password" type="password" placeholder="Nhập password" class="form-control" name="Password"
+                   id="exampleInputPassword">
+        </div>
+        <button type="submit" class="btn btn-primary btn-form-login-submit">Đăng nhập</button>
+    </form>
+    <div class="login_error"></div>
+</div>
+

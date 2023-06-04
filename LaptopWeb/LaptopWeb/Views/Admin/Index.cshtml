@@ -1,0 +1,52 @@
+﻿@model List<Laptop>
+
+
+<link rel="icon" href="https://laptop-react-web.web.app/static/media/logo_tran_phat.d761b569.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+
+
+<div class="right_admin_page_header">
+    <h2>DANH SÁCH SẢN PHẨM</h2>
+    <div class="search_header w-25">
+        <form action="/Main" method="post" class="search_header_wrap">
+            <input class="search_header_input" id="searchingPageAdmin" name="searchingPageAdmin" type="text"
+                    placeholder="Nhập tên sản phẩm">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass search_header_icon"></i></button>
+        </form>
+    </div>
+    <a class="add_product_button" href="/Admin/Add">Thêm sản phẩm</a>
+</div>
+<div class="marginTop100"></div>
+
+<h3 class="deleteLaptopSuccess">@ViewBag.AddLaptop</h3>
+   
+
+<div class="right_list_product">
+    @foreach(Laptop laptop in Model)
+    {
+        <div href="" class="list_product_item">
+            <img src="@laptop.link_img" alt="">
+            <div class="list_product_item_title"> @laptop.name</div>
+            <div class="list_product_item_manipulate">
+                <a class="list_product_item_button list_product_item_edit" href="/Admin/Edit/@laptop.LaptopId">Edit</a>
+                <a id="myLink" class="list_product_item_button list_product_item_delete" onclick="redirectToPage()" href="/Admin/Delete/@laptop.LaptopId">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+
+<script>
+    function redirectToPage() {
+        var confirmation = window.confirm("Are you sure you want to delete Laptop?");
+
+        if (confirmation) {
+            var targetUrl = document.getElementById("myLink").getAttribute("href");
+            window.location.href = targetUrl;
+        }
+    }
+
+</script>

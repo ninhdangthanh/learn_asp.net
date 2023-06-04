@@ -1,0 +1,180 @@
+﻿@model Laptop
+
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+
+<div class="body_title container">
+    <div class="body_nav">
+        <a href="/Main" class="nav_home">
+            Trang chủ
+        </a>
+        /
+        <a href="" class="nav_home">Laptop Dell</a>
+        /
+        <span>@Model.name</span>
+    </div>
+
+    <div class="body_title_name_rating dplfl">
+        <h4 class="body_title_name">@Model.name</h4>
+        <div class="body_title_rating dplfl">
+            <div class="body_title_rating_star dplfl">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <div>5</div>
+            </div>
+
+            <div class="body_title_name_rating_question dplfl">
+                <div>0 đánh giá</div>
+                <span>|</span>
+                <div>0 câu hỏi</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="body container">
+    <div class="body_wrap">
+        <div class="body_product_left">
+            <div class="body_product_left_img">
+                <img src="@Model.link_img" alt="">
+            </div>
+            <div class="body_product_left_promotion">
+                <div class="body_product_left_promotion_sticker">
+                    <i class="fa-solid fa-gift"></i>
+                    Khuyến mãi
+                </div>
+                <div class="body_product_left_promotion_item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        Tặng Túi xách thời trang Mr.Vui or Balo Laptop trị giá 199.000đ
+                    </div>
+                </div>
+                <div class="body_product_left_promotion_item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        Tặng chuột không dây trị giá 119.000đ
+                    </div>
+                </div>
+                <div class="body_product_left_promotion_item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        Tặng Túi Chống Sốc trị giá 109.000đ
+                    </div>
+                </div>
+                <div class="body_product_left_promotion_item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        Tặng phiếu vệ sinh, thay keo tản nhiệt và bảo dưỡng Laptop định kì miễn phí "20
+                        năm"
+                    </div>
+                </div>
+                <div class="body_product_left_promotion_item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        Tặng Voucher giảm giá trực tiếp cho khách hàng thân thiết 3% ngày thường và 5%
+                        sinh nhật
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body_product_mid">
+            <div class="body_product_mid_price_container">
+                <div class="body_product_mid_price_container_title">Giá:</div>
+                <div class="body_product_mid_price_container_price">
+                    <div class="body_product_mid_price_now_price">
+                        @Model.price
+                    </div>
+                    <div class="body_product_mid_price_last_price">
+                        @Model.past_price
+                    </div>
+                </div>
+                <div class="body_product_mid_price_vat">
+                    <div class="body_product_mid_price_vat_title">
+                        (Chưa VAT)
+                    </div>
+                    <div class="body_product_mid_price_vat_stocking">
+                        CÒN HÀNG
+                    </div>
+                </div>
+            </div>
+
+            <div class="product_mid_detail_product">
+                <strong>CPU: </strong>
+                @Model.cpu
+            </div>
+            <div class="product_mid_detail_product">
+                <strong>RAM: </strong>
+                @Model.ram
+            </div>
+            <div class="product_mid_detail_product">
+                <strong>Đĩa cứng: </strong>
+                @Model.memory_compact SSD M.2 PCIe
+            </div>
+            <div class="product_mid_detail_product">
+                <strong>Màn hình: </strong>
+                @Model.screen
+            </div>
+            <div class="product_mid_detail_product">
+                <strong>Card đồ họa: </strong>
+                @Model.card
+            </div>
+            <button disabled type="button" class="btn btn-danger btn-danger-buying">
+                <h4>MUA NGAY</h4>
+                <div>Gọi xác nhận và giao hàng tận nơi</div>
+            </button>
+            <button disabled type="button" class="btn btn-secondary btn-danger-carting">
+                <h4>THÊM VÀO GIỎ HÀNG</h4>
+                <div>Thêm vào giỏ hàng để mua ngay bất cứ khi nào</div>
+            </button>
+            <div class="body_product_mid_danger_text">
+                Chức năng giỏ hàng và mua sản phẩm đang được cập
+                nhật
+            </div>
+        </div>
+        <div class="body_product_right">
+            <div class="product_right_insurance">
+                <div class="product_right_insurance_item">
+                    <img src="https://laptop-react-web.web.app/static/media/1.0c9bb8a8.svg" alt="">
+                    <div>7 ngày dùng thử đổi trả vì bất kỳ lý do gì. Đổi trả hư hỏng 30 ngày</div>
+                </div>
+                <div class="product_right_insurance_item">
+                    <img src="	https://laptop-react-web.web.app/static/media/2.4937b2a3.svg" alt="">
+                    <div>Bảo hành máy nhanh 3H. Bảo hành phần cứng 12 Tháng</div>
+                </div>
+                <div class="product_right_insurance_item">
+                    <img src="https://laptop-react-web.web.app/static/media/3.91f88ad0.svg" alt="">
+                    <div>Bảo hành nhanh 3H - Không kịp mượn máy mang về</div>
+                </div>
+                <div class="product_right_insurance_item">
+                    <img src="https://laptop-react-web.web.app/static/media/4.68cb583e.svg" alt="">
+                    <div>Free Ship HCM - COD Toàn Quốc</div>
+                </div>
+                <div class="product_right_insurance_item">
+
+                    <div>Đổi cũ lấy mới</div>
+                </div>
+                <div class="product_right_insurance_item">
+                    <img src="https://laptop-react-web.web.app/static/media/6.64c5fcf6.svg" alt="">
+                    <div>Trả góp 0% qua Visa Mastercard hoặc Tín chấp HD SaiGon</div>
+                </div>
+            </div>
+            <div class="product_right_address_insurance">
+                <div class="product_right_insurance_item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    103/16 Nguyễn Hồng Đào , phường 14, Quận Tân Bình, TPHCM
+                </div>
+                <div class="product_right_insurance_item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    169 Võ Văn Ngân, Phường Linh Chiểu, TP.Thủ Đức
+                </div>
+                <div class="product_right_insurance_item">
+                    <i class="fa-solid fa-phone-flip"></i>
+                    035.9814.518
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

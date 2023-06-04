@@ -1,0 +1,251 @@
+﻿
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto",arial,sans-serif;
+}
+
+.container {
+    width: 1140px !important;
+    margin: 0 auto;
+}
+
+.admin_page {
+    display: flex;
+    width: 100%;
+}
+
+.left_admin_page {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 8px;
+    padding-left: 16px;
+    background-color: #123d69;
+}
+
+.laptop_homepage_logo {
+    width: 80%;
+}
+
+.right_admin_page {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.left_list_item {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+    .left_list_item i {
+        margin-right: 10px;
+    }
+
+    .left_list_item:hover {
+        background-color: #0186cf;
+    }
+
+.active {
+    background-color: #0186cf;
+}
+
+.left_list_item_logout:hover {
+    background-color: rgb(255, 112, 112);
+}
+
+.laptop_homepage_logo_link {
+    display: block;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid white;
+    margin-bottom: 18px;
+}
+
+.search_header_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #333;
+    height: 36px;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+}
+
+.search_header_input {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    left: 20px;
+    font-size: inherit;
+}
+
+.search_header_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    right: 10px;
+    font-size: 20px;
+    color: #1e73ac;
+    font-weight: bold;
+}
+
+.search_header {
+    width: 300px;
+}
+
+.right_admin_page_header {
+    display: flex;
+    background-color: #257bfc;
+    align-items: center;
+    padding: 20px 40px;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+}
+
+    .right_admin_page_header h2 {
+        color: white;
+    }
+
+
+.add_product_button {
+    display: block;
+    color: blue;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid #333;
+}
+
+    .add_product_button:hover {
+        background-color: rgb(187, 187, 255);
+    }
+
+.right_list_product {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.right_list_form {
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.list_product_item {
+    display: block;
+    width: 25%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+}
+
+    .list_product_item img {
+        width: 100%;
+    }
+
+.list_product_item_title {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.list_product_item_button {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.list_product_item_detail {
+    background-color: #0dcaf0;
+}
+
+.list_product_item_edit {
+    background-color: #ffc107;
+    width: 49%;
+}
+
+.list_product_item_delete {
+    background-color: #dc3545;
+    width: 49%;
+}
+
+.list_product_item_manipulate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right_admin_table_list {
+    margin-top: 100px;
+    padding: 30px 50px;
+}
+
+.th-bg {
+    background-color: aqua !important;
+}
+
+.delete-restaurant-link {
+    cursor: pointer;
+    color: #0d6efd;
+}
+
+.add-user-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px;
+    margin-bottom: 16px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.create-new-product {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+.img_product_delete_page {
+    height: 200px;
+    background-size: contain;
+}
+
+.deleteLaptopSuccess {
+    color: blue;
+    padding-left: 30px
+}
+
+.marginTop100 {
+    margin-top: 120px;
+}
